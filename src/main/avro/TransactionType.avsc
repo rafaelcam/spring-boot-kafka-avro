@@ -1,0 +1,6 @@
+{
+    "name": "TransactionType",
+    "namespace": "com.movilepay.transactionengine.event",
+    "type": "enum",
+    "symbols" : ["CIP_DEPOSIT","BANK_TRANSFER","BILL_PAYMENT","PREPAID_CARD","TED_TRANSFER","P2P_TRANSFER"]
+}

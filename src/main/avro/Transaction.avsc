@@ -1,0 +1,73 @@
+{
+  "name": "Transaction",
+  "type": "record",
+  "namespace": "com.movilepay.transactionengine.event",
+  "fields": [
+    {
+      "name": "id",
+      "type": "string",
+      "logicalType": "uuid"
+    },
+    {
+      "name": "account_reference",
+      "type": "string"
+    },
+    {
+      "name": "type",
+      "type": "TransactionType"
+    },
+    {
+      "name": "amount",
+      "type": "long"
+    },
+    {
+      "name": "currency",
+      "type": "TransactionCurrency"
+    },
+    {
+      "name": "external_reference",
+      "type": "string"
+    },
+    {
+      "name": "created_at",
+      "type": "long",
+      "logicalType": "timestamp-millis"
+    },
+    {
+      "name": "events",
+      "type": {
+        "type": "array",
+        "items": {
+          "name": "TransactionEvent",
+          "type": "record",
+          "namespace": "com.movilepay.transactionengine.event",
+          "fields": [
+            {
+              "name": "id",
+              "type": "string",
+              "logicalType": "uuid"
+            },
+            {
+              "name": "name",
+              "type": "string"
+            },
+            {
+              "name": "transaction_id",
+              "type": "string",
+              "logicalType": "uuid"
+            },
+            {
+              "name": "payload",
+              "type": "string"
+            },
+            {
+              "name": "created_at",
+              "type": "long",
+              "logicalType": "timestamp-millis"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

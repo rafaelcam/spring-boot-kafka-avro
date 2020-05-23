@@ -1,0 +1,6 @@
+{
+    "name": "TransactionCurrency",
+    "namespace": "com.movilepay.transactionengine.event",
+    "type": "enum",
+    "symbols" : ["BRL"]
+}

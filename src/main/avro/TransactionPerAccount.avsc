@@ -1,0 +1,15 @@
+{
+  "name": "TransactionPerAccount",
+  "type": "record",
+  "namespace": "com.movilepay.transactionengine.event",
+  "fields": [
+    {
+      "name": "account_reference",
+      "type": "string"
+    },
+    {
+      "name": "quantity",
+      "type": "long"
+    }
+  ]
+}

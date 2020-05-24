@@ -21,7 +21,7 @@ spring:
       specific.avro.reader: true
     consumer:
       group-id: group_spring_boot_kafka_avro
-      auto-offset-reset: latest
+      auto-offset-reset: earliest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
     producer:

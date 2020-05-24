@@ -1,0 +1,9 @@
+CREATE STREAM TRANSACTIONS WITH (kafka_topic='TRANSACTIONS', value_format='AVRO');
+
+CREATE TABLE TRANSACTIONS_PER_ACCOUNT 
+WITH(VALUE_AVRO_SCHEMA_FULL_NAME='com.movilepay.transactionengine.event.TransactionPerAccount') 
+AS SELECT account_reference as "account_reference", count(*) AS "quantity" FROM TRANSACTIONS GROUP BY account_reference EMIT CHANGES;
+
+CREATE TABLE TRANSACTIONS_TPV_PER_ACCOUNT 
+WITH(VALUE_AVRO_SCHEMA_FULL_NAME='com.movilepay.transactionengine.event.TransactionTpvPerAccount') 
+AS SELECT account_reference as "account_reference", sum(amount) AS "amount" FROM TRANSACTIONS GROUP BY account_reference EMIT CHANGES;
